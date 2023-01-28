@@ -27,11 +27,26 @@ struct ContentView: View {
             .onTapGesture {
                 print("Dupre")
             }
+        
+        NavigationView {
+            VStack {
+                Text("Map View")
+                NavigationLink( destination: DetailView()) {
+                    Text("Home Page")
+                }
+            }.navigationTitle("Home")
+        }
     }
     
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
             ContentView()
         }
+    }
+}
+
+struct DetailView: View {
+    var body: some View {
+        Text("Hello World!")
     }
 }
